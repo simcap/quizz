@@ -1,0 +1,11 @@
+hr {
+	border: 2px solid FF9900;
+}
+
+div.question ul li {
+	list-style-type: none;
+}
+
+div.question input[type="radio"] {
+	margin-right: 10px;
+}
