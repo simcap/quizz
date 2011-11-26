@@ -9,3 +9,7 @@ div.question ul li {
 div.question input[type="radio"] {
 	margin-right: 10px;
 }
+
+.ui-progressbar-value { 
+	background-image: url(images/pbar-ani.gif); 
+}

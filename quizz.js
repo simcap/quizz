@@ -1,6 +1,7 @@
 var QUESTIONS_COUNT = quizz.questions.length;
 
 $(document).ready(function() {
+
 	$(':button.next').live('click', function(){
 		var questionNumber = $(this).parents('div.question:first').attr('id').substr(8);
 		if(questionNumber >= QUESTIONS_COUNT) return;
@@ -66,8 +67,9 @@ function displayResults() {
 
 	var scoreInPercent = Math.round((100 * score) / (QUESTIONS_COUNT * 2));
 	
-	$('div.question').html('<h6>Your team is ' + scoreInPercent + '% XP ......... ;)</h6>');
+	$('div.question').html('<h7>Your team is ' + scoreInPercent + '% XP ......... ;)</h6><br /><div id="progressbar"></div>');
 	
+	$('div#progressbar').progressbar({value: scoreInPercent});	
 }
 
 function countQuestionsAnswered() {
