@@ -50,7 +50,7 @@ function displayQuestion(questionNumber){
 	});
 	
 	$('input[type=radio]').each(function(){
-		if($(this).val() == $('body').data('question' + questionNumber)){
+		if($(this).val() == getActualScoreForQuestion(questionNumber)){
 			$(this).attr('checked', 'checked');
 		}
 	});
@@ -60,16 +60,23 @@ function displayQuestion(questionNumber){
 
 function displayResults() {
 	$('div.question').html('');
-	var score = 0;
+	var totalScore = 0;
 	for(i = 1; i <= QUESTIONS_COUNT; i++) {
-		score = score+ ($('body').data('question' + i) ) * 1;
+		totalScore = totalScore + getActualScoreForQuestion(i);
 	}
 
-	var scoreInPercent = Math.round((100 * score) / (QUESTIONS_COUNT * 2));
+	var scoreInPercent = Math.round((100 * totalScore) / (QUESTIONS_COUNT * 2));
 	
-	$('div.question').html('<h7>Your team is ' + scoreInPercent + '% XP ......... ;)</h6><br /><div id="progressbar"></div>');
+	$('div.question').html('<h6>Your team is ' + scoreInPercent + '% XP ......... ;)</h6>');
+			
+	$('div.question').append('<table id="your-answers" class="zebra-striped"><thead><tr><th>Questions</th><th>Your answers</th></tr></thead></table>');
 	
-	$('div#progressbar').progressbar({value: scoreInPercent});	
+	for(i = 0; i < QUESTIONS_COUNT; i++) {
+		var quizzQuestion = window.quizz.questions[i];
+		var actualAnswer = getAnswerFromScore(quizzQuestion, getActualScoreForQuestion(i+1));
+    	$('table#your-answers').append('<tr><td>' + quizzQuestion.question +'</td><td>' + actualAnswer + '</td></tr>');
+  	}
+	
 }
 
 function countQuestionsAnswered() {
@@ -80,5 +87,16 @@ function countQuestionsAnswered() {
   }
   return propCount;
 }
+
+function getAnswerFromScore(quizzQuestion, score) {
+	if (quizzQuestion.answers[0].score == score) return quizzQuestion.answers[0].answer;
+	if (quizzQuestion.answers[1].score == score) return quizzQuestion.answers[1].answer;
+	if (quizzQuestion.answers[2].score == score) return quizzQuestion.answers[2].answer;
+}
+
+function getActualScoreForQuestion(questionNumber) {
+  return  ($('body').data('question' + questionNumber)) * 1;
+}
+
 
 

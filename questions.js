@@ -64,7 +64,7 @@ var quizz =
                     "score": "2"
                 },
                 {
-                    "answer": "When our manager organize a meeting to discuss it",
+                    "answer": "When our manager organizes a meeting to discuss it",
                     "score": "0"
                 },
                 {
@@ -78,11 +78,11 @@ var quizz =
             "question": "How often do you pair program ?",
             "answers": [
                 {
-                    "answer": "80% to 90% of the time",
+                    "answer": "80% to 100% of the time",
                     "score": "2"
                 },
                 {
-                    "answer": "Less than 50% of the time",
+                    "answer": "About 50% of the time",
                     "score": "1"
                 },
                 {
@@ -158,7 +158,7 @@ var quizz =
                     "score": "1"
                 },
                 {
-                    "answer": "About 30 minutes",
+                    "answer": "More than 15 minutes",
                     "score": "0"
                 }
             ]
@@ -172,7 +172,7 @@ var quizz =
                     "score": "2"
                 },
                 {
-                    "answer": "The design should be documented with up to date diagrams and UML",
+                    "answer": "The design should be documented with up to date use cases and UML diagrams",
                     "score": "1"
                 },
                 {
@@ -226,7 +226,7 @@ var quizz =
                     "score": "2"
                 },
                 {
-                    "answer": "Once a week",
+                    "answer": "When there are important things to discuss",
                     "score": "0"
                 },
                 {
