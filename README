@@ -1,1 +1,7 @@
 Simple quizz to know how XP is your team. Check it out at http://simcap.github.com/quizz/
+
+Feedback:
+- modules instead of components
+- How often does your team do pair programming 4 options
+- How many developers are productive using TDD in your team ? à refaire
+- How often do you release a version in production ?
