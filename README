@@ -1,5 +1,7 @@
 Simple quizz using local storage to know how XP is your team. Check it out at http://simcap.github.com/quizz/
 
+For the actual code look at the gh-pages branch
+
 Feedback:
 - modules instead of components
 - How often does your team do pair programming 4 options
